@@ -1,5 +1,5 @@
 pub fn is_qemu(process: &memflow::os::process::ProcessInfo) -> bool {
-    process.name.contains("qemu-system-")
+    process.name.contains("qemu-system-") || process.name.to_string() == "kvm"
 }
 
 pub fn qemu_arg_opt<'a>(
